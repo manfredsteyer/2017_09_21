@@ -1,3 +1,7 @@
+import { FlightResolver } from './flight-edit/flight.resolver';
+import { ExitGuard } from '../shared/exit/exit.guard';
+import { childOfKind } from 'tslint/lib';
+import { AuthGuard } from '../shared/auth/auth.guard';
 import { FlightBookingComponent } from './flight-booking.component';
 import { FlightEditComponent } from './flight-edit/flight-edit.component';
 import { FlightSearchComponent } from './flight-search/flight-search.components';
@@ -7,25 +11,46 @@ import { PassengerSearchComponent } from "../passenger-search/passenger-search.c
 
 
 const FLIGHT_SEARCH_ROUTES: Routes = [
+
     {
-        path: 'flight-booking',
-        component: FlightBookingComponent,
+        path: '',
+        canActivate: [AuthGuard],
+        data: {
+            neededRoles: ['Manager', 'Admin', 'NiceGuy']
+        },
         children: [
+
             {
-                path: 'flight-search',
-                component: FlightSearchComponent
-            },
-            {
-                path: 'passenger-search',
-                component: PassengerSearchComponent
-            },
-            {
-                path: 'flight-edit/:id',
-                component: FlightEditComponent
+                path: 'flight-booking',
+                component: FlightBookingComponent,
+                children: [
+                    {
+                        path: 'flight-search',
+                        component: FlightSearchComponent
+                    },
+                    {
+                        path: 'passenger-search',
+                        component: PassengerSearchComponent
+                    },
+                    {
+                        path: 'flight-edit/:id',
+                        component: FlightEditComponent,
+                        canDeactivate: [ExitGuard],
+                        resolve: {
+                            flight: FlightResolver
+                        }
+                    }
+               
+                ]
             }
-       
+        
+
+
         ]
-    },
+        
+    }
+
+    // { }, { }, { }
 ];
 
 export const FlightSearchRouterModule = RouterModule.forChild(FLIGHT_SEARCH_ROUTES);

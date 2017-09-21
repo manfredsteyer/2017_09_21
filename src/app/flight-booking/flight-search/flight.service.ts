@@ -13,6 +13,19 @@ export class FlightService {
         console.debug('Hello from the FlightService');
     }
 
+    findById(id: string): Observable<Flight> {
+        let url = this.baseUrl + 'flight';
+        
+                let params = new HttpParams()
+                                    .set('id', id);
+        
+                let headers = new HttpHeaders()
+                                    .set('Accept', 'application/json');
+        
+                return this.http.get<Flight>(url, { params, headers });    
+                
+    }
+
     find(from: string, to: string): Observable<Flight[]> {
         
         let url = this.baseUrl + 'flight';

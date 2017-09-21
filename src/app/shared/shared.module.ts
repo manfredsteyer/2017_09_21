@@ -1,3 +1,7 @@
+import { AuthGuard } from './auth/auth.guard';
+import { FlightResolver } from '../flight-booking/flight-edit/flight.resolver';
+import { ExitGuard } from './exit/exit.guard';
+import { AuthService } from './auth/auth.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { LocationPipe } from "./pipes/location.pipe";
@@ -15,7 +19,13 @@ import { AsyncLocationValidationDirective } from "./validation/async-location.va
         RoundTripValidationDirective, 
         AsyncLocationValidationDirective 
     ],
-    providers: [],
+    providers: [
+        AuthGuard,
+        AuthService, // { provide: AuthService, useClass: AuthService}
+        ExitGuard,
+        FlightResolver,
+        
+    ],
     exports: [
         LocationPipe,
         LocationValidationDirective,
