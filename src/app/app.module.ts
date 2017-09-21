@@ -1,3 +1,4 @@
+import { BasketComponent } from './basket/basket.component';
 import { FlightBookingModule } from './flight-booking/flight-booking.module';
 
 import { HttpModule } from '@angular/http';
@@ -11,6 +12,7 @@ import { BASE_URL } from "./app.tokens";
 import { MouseMoveComponent } from './mouse-move/mouse-move.component';
 import { AppRouterModule } from "./app.routes";
 import { HomeComponent } from "./home/home.component";
+import { FlightBookingComponent } from './flight-booking/flight-booking.component';
 
 @NgModule({
   imports: [
@@ -22,6 +24,7 @@ import { HomeComponent } from "./home/home.component";
   ],
   declarations: [
     AppComponent,
+    BasketComponent,
     MouseMoveComponent,    
     HomeComponent
   ],

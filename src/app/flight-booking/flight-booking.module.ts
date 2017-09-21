@@ -1,3 +1,4 @@
+import { FlightBookingComponent } from './flight-booking.component';
 import { PassengerSearchComponent } from '../passenger-search/passenger-search.component';
 import { FlightCardComponent } from './flight-search/flight-card.component';
 import { FlightSearchComponent } from './flight-search/flight-search.components';
@@ -21,9 +22,9 @@ import { FlightEditComponent } from './flight-edit/flight-edit.component';
         ReactiveFlightSearchComponent,
         PassengerSearchComponent,
         FlightSearchComponent,
-        FlightCardComponent
-,
-    FlightEditComponent
+        FlightCardComponent,
+        FlightEditComponent,
+        FlightBookingComponent
 
 ],
     providers: [],

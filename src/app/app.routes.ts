@@ -1,3 +1,4 @@
+import { BasketComponent } from './basket/basket.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from "./home/home.component";
 import { FlightSearchComponent } from "./flight-booking/flight-search/flight-search.components";
@@ -12,6 +13,11 @@ const APP_ROUTES: Routes = [
     {
         path: 'home',
         component: HomeComponent
+    },
+    {
+        path: 'basket',
+        component: BasketComponent,
+        outlet: 'aux'
     },
     /*
     {
