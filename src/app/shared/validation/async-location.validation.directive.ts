@@ -1,7 +1,7 @@
+import { FlightService } from '../../flight-booking/flight-search/flight.service';
 
 import { Directive, Input } from '@angular/core';
 import { NG_VALIDATORS, Validator, AbstractControl, NG_ASYNC_VALIDATORS } from "@angular/forms";
-import { FlightService } from "../../flight-search/flight.service";
 import { Observable } from "rxjs/Observable";
 
 @Directive({ 

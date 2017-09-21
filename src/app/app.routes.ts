@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from "./home/home.component";
-import { FlightSearchComponent } from "./flight-search/flight-search.components";
+import { FlightSearchComponent } from "./flight-booking/flight-search/flight-search.components";
 import { PassengerSearchComponent } from "./passenger-search/passenger-search.component";
 
 const APP_ROUTES: Routes = [

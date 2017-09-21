@@ -1,5 +1,5 @@
+import { Flight } from '../../entities/flight';
 import { Component, OnInit, EventEmitter } from '@angular/core';
-import { Flight } from '../entities/flight';
 
 //               V----------------V--------- Explizit importiert
 import { Http, URLSearchParams, Headers } from '@angular/http';

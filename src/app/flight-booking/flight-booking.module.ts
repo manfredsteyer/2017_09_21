@@ -1,12 +1,13 @@
+import { PassengerSearchComponent } from '../passenger-search/passenger-search.component';
+import { FlightCardComponent } from './flight-search/flight-card.component';
+import { FlightSearchComponent } from './flight-search/flight-search.components';
+import { FlightSearchRouterModule } from './flight-booking.routes';
 import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SharedModule } from "../shared/shared.module";
-import { FlightSearchComponent } from "../flight-search/flight-search.components";
-import { FlightCardComponent } from "../flight-search/flight-card.component";
 import { ReactiveFlightSearchComponent } from "../reactive-flight-search/reactive-flight-search.components";
-import { PassengerSearchComponent } from "../passenger-search/passenger-search.component";
-import { FlightSearchRouterModule } from "../flight-search/flight-search.routes";
+import { FlightEditComponent } from './flight-edit/flight-edit.component';
 
 @NgModule({
     imports: [
@@ -21,11 +22,14 @@ import { FlightSearchRouterModule } from "../flight-search/flight-search.routes"
         PassengerSearchComponent,
         FlightSearchComponent,
         FlightCardComponent
-    ],
+,
+    FlightEditComponent
+
+],
     providers: [],
     exports: [
         ReactiveFlightSearchComponent,
         FlightSearchComponent
     ]
 })
-export class FlightSearchModule { }
+export class FlightBookingModule { }

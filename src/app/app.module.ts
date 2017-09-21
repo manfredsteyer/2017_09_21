@@ -1,4 +1,5 @@
-import { FlightSearchModule } from './flight-search/flight-search.module';
+import { FlightBookingModule } from './flight-booking/flight-booking.module';
+
 import { HttpModule } from '@angular/http';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -6,8 +7,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { FlightSearchComponent } from "./flight-search/flight-search.components";
-import { FlightService } from "./flight-search/flight.service";
 import { BASE_URL } from "./app.tokens";
 import { MouseMoveComponent } from './mouse-move/mouse-move.component';
 import { AppRouterModule } from "./app.routes";
@@ -18,7 +17,7 @@ import { HomeComponent } from "./home/home.component";
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    FlightSearchModule,
+    FlightBookingModule,
     AppRouterModule
   ],
   declarations: [

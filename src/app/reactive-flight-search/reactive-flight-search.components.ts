@@ -1,9 +1,9 @@
+import { FlightService } from '../flight-booking/flight-search/flight.service';
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Flight } from '../entities/flight';
 
 //               V----------------V--------- Explizit importiert
 import { Http, URLSearchParams, Headers } from '@angular/http';
-import { FlightService } from '../flight-search/flight.service'
 import { Subject } from "rxjs/Rx";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
