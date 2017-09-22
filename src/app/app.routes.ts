@@ -21,6 +21,12 @@ const APP_ROUTES: Routes = [
     },
     /*
     {
+        path: 'flight-booking',
+        loadChildren: './flight-booking/flight-booking.module#FlightBookingModule'
+    },
+    */
+    /*
+    {
         path: 'flight-search',
         component: FlightSearchComponent
     },

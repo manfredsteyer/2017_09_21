@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { BasketComponent } from './basket/basket.component';
 import { FlightBookingModule } from './flight-booking/flight-booking.module';
 
@@ -19,8 +20,9 @@ import { FlightBookingComponent } from './flight-booking/flight-booking.componen
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    FlightBookingModule,
-    AppRouterModule
+    FlightBookingModule, // This prevents Lazy Loading !!
+    AppRouterModule,
+    SharedModule
   ],
   declarations: [
     AppComponent,
