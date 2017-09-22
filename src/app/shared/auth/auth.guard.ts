@@ -14,6 +14,7 @@ export class AuthGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         
         console.debug('route.data', route.data);
+        console.debug('AuthGuard::currentUser', this.authService.userName);
 
         if (!this.authService.userName) {
             this.router.navigate(['home', {plsLoginNow: true}])

@@ -1,5 +1,6 @@
+import { CustomPreloadingStrategy } from './shared/preloading/custom-preloading-strategy';
 import { BasketComponent } from './basket/basket.component';
-import { Routes, RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from "./home/home.component";
 import { FlightSearchComponent } from "./flight-booking/flight-search/flight-search.components";
 import { PassengerSearchComponent } from "./passenger-search/passenger-search.component";
@@ -19,12 +20,10 @@ const APP_ROUTES: Routes = [
         component: BasketComponent,
         outlet: 'aux'
     },
-    /*
     {
         path: 'flight-booking',
         loadChildren: './flight-booking/flight-booking.module#FlightBookingModule'
     },
-    */
     /*
     {
         path: 'flight-search',
@@ -42,4 +41,8 @@ const APP_ROUTES: Routes = [
 
 ];
 
-export const AppRouterModule = RouterModule.forRoot(APP_ROUTES);
+export const AppRouterModule = 
+                RouterModule.forRoot(
+                    APP_ROUTES,
+                    { preloadingStrategy: PreloadAllModules   });
+

@@ -20,9 +20,9 @@ import { FlightBookingComponent } from './flight-booking/flight-booking.componen
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    FlightBookingModule, // This prevents Lazy Loading !!
+    // FlightBookingModule, // This prevents Lazy Loading !!
     AppRouterModule,
-    SharedModule
+    SharedModule.forRoot()
   ],
   declarations: [
     AppComponent,

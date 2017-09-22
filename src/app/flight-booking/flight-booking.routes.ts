@@ -14,14 +14,13 @@ const FLIGHT_SEARCH_ROUTES: Routes = [
 
     {
         path: '',
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         data: {
             neededRoles: ['Manager', 'Admin', 'NiceGuy']
         },
         children: [
-
             {
-                path: 'flight-booking',
+                path: '',
                 component: FlightBookingComponent,
                 children: [
                     {

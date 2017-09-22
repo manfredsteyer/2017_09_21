@@ -1,8 +1,9 @@
+import { CustomPreloadingStrategy } from './preloading/custom-preloading-strategy';
 import { AuthGuard } from './auth/auth.guard';
 import { FlightResolver } from '../flight-booking/flight-edit/flight.resolver';
 import { ExitGuard } from './exit/exit.guard';
 import { AuthService } from './auth/auth.service';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { LocationPipe } from "./pipes/location.pipe";
 import { LocationValidationDirective } from "./validation/location.validation.directive";
@@ -19,13 +20,7 @@ import { AsyncLocationValidationDirective } from "./validation/async-location.va
         RoundTripValidationDirective, 
         AsyncLocationValidationDirective 
     ],
-    providers: [
-        AuthGuard,
-        AuthService, // { provide: AuthService, useClass: AuthService}
-        ExitGuard,
-        FlightResolver,
-        
-    ],
+    providers: [ ],
     exports: [
         LocationPipe,
         LocationValidationDirective,
@@ -33,4 +28,27 @@ import { AsyncLocationValidationDirective } from "./validation/async-location.va
         AsyncLocationValidationDirective  
     ]
 })
-export class SharedModule { }
+export class SharedModule { 
+
+
+    static forChild(): ModuleWithProviders {
+        return {
+            ngModule: SharedModule,
+            providers: []
+        }
+    }
+    
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: SharedModule,
+            providers: [
+                AuthGuard,
+                AuthService, 
+                ExitGuard,
+                FlightResolver,
+                CustomPreloadingStrategy
+            ]
+        }
+    }
+
+}
